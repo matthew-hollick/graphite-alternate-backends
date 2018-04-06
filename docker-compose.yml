@@ -1,0 +1,31 @@
+grafana:
+  image: grafana/grafana
+  environment:
+    - GF_INSTALL_PLUGINS=grafana-piechart-panel,jdbranham-diagram-panel,grafana-clock-panel,grafana-simple-json-datasource
+  ports:
+    - "3000:3000"
+  volumes:
+    - ./grafana:/var/lib/grafana/
+    - ./provisioning/dashboards:/etc/grafana/provisioning/dashboards
+    - ./provisioning/datasources:/etc/grafana/provisioning/datasources
+    - ./dashboard-repo:/var/lib/grafana/dashboards
+cassandra:
+  image: cassandra:latest
+  ports:
+    - "7000:7000"
+  expose:
+    - "7000"
+  volumes:
+    - ./cassandra:/var/lib/cassandra
+biggraphite:
+  image:
+  expose:
+    - "2003"
+  volumes:
+    - ./biggraphite:/biggraphite
+graphite:
+  image:
+  ports:
+    - "8080:8080"
+  expose:
+    - "8080"

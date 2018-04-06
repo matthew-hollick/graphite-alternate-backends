@@ -1,0 +1,155 @@
+apiVersion: 1
+
+deleteDatasources:
+  - name: Graphite-Production
+    orgId: 1
+  - name: Graphite-Staging
+    orgId: 1
+  - name: Graphite-QA
+    orgId: 1
+  - name: Graphite-Development
+    orgId: 1
+  - name: Graphite-ExternalTest
+    orgId: 1
+  - name: Graphite-Integration
+    orgId: 1
+
+datasources:
+- name: Graphite-Production
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.production.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: true
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
+- name: Graphite-Staging
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.staging.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: false
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
+- name: Graphite-QA
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.qa.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: false
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
+- name: Graphite-ExternalTest
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.externaltest.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: false
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
+- name: Graphite-Development
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.development.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: false
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
+- name: Graphite-Integration
+  type: graphite
+  access: proxy
+  orgId: 1
+  url: https://graphite.tools.integration.tax.service.gov.uk/
+  password:
+  user:
+  database:
+  basicAuth:
+  basicAuthUser:
+  basicAuthPassword:
+  withCredentials:
+  isDefault: false
+  jsonData:
+     graphiteVersion: "1.1"
+     tlsAuth:
+     tlsAuthWithCACert:
+  secureJsonData:
+    tlsCACert: "..."
+    tlsClientCert: "..."
+    tlsClientKey: "..."
+  version: 1
+  editable: false
