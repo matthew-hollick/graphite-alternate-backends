@@ -37,13 +37,25 @@ services:
     depends_on:
       - cassandra
     ports:
-      - "2003"
+      - "2003:2003"
     volumes:
       - ./biggraphite:/opt/graphite/conf
       - ./shared:/shared
-  #biggraphite-graphite:
+  memcached:
+    image: memcached:alpine
+    ports:
+      - "11211:11211"
+  bg_nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./ginx:/etc/nginx
+  #bg_graphite:
   #  image:
   #  ports:
   #    - "8080:8080"
-  #  expose:
-  #    - "8080"
+  #  depends_on:
+  #    - bg_nginx
+  #    - bg_carbon
+  #    - memcached
